@@ -1,4 +1,109 @@
 # Bus-booking-system
+**This Java-based console application simulates a Bus Booking System, allowing users to:**
+
+View available pickup cities
+
+Choose a destination city from that pickup
+
+See available bus routes and types
+
+Book seats on a selected bus
+
+🔧** **Core Components****
+1. **Class**: Route
+Represents a travel route from one city to another.
+
+**Attributes**: pickup, destination, viaPoints, distanceKm, durationHr, and a routeName for readability.
+
+**toString()**: Returns a human-readable representation of the route.
+
+2. **Class**: Bus
+Represents a single bus on a specific route.
+
+**Attributes**: busId, type (AC, Sleeper, Non-AC), route, totalSeats, and bookedSeatNumbers.
+
+**Methods:**
+
+isSeatAvailable(seatNumber)
+
+bookSpecificSeats(seats)
+
+getAvailableSeats()
+
+calculateFare(seats)
+
+toString()
+
+3.**Class**: BusService
+Manages the collection of buses and routes.
+
+Attributes:
+
+**buses**: List of all buses
+
+**routes**: List of all available routes
+
+**Methods:**
+
+loadRoutesAndBuses(): Initializes cities, routes, and buses
+
+listPickupCities(): Shows cities with outgoing routes
+
+listDestinationsFrom(pickup): Shows valid destinations from a selected pickup
+
+listRoutes(pickup, destination): Lists all routes between two cities
+
+bookBus(...): Handles the booking logic
+
+4.** **Class****: BusBookingApp (Main Class)
+Handles user interaction via the console.
+
+Presents a menu:
+
+View pickup cities
+
+Book a bus
+
+Exit
+
+Based on user input, it calls relevant methods in BusService.
+
+🧠** **Functional Features*******
+Bidirectional routing (e.g., Bangalore ↔ Hyderabad)
+
+Multiple route options between cities
+
+Real-time seat availability
+
+Fare calculation based on bus type and distance
+
+Route names automatically generated with via points
+
+User-friendly prompts and validations
+
+🗺️ **Example Cities Included**
+Pickup/Destination Cities: Bangalore, Hyderabad, Chennai, Vizag
+
+Each city pair has predefined routes with intermediate stops (via points)
+
+💰**Fare Structure (per km)***:
+AC: ₹2.0
+
+Sleeper: ₹1.5
+
+Non-AC: ₹1.0
+
+✅ **Benefits**
+Simple and extensible
+
+Easy to add more cities, buses, or route variations
+
+Interactive and menu-driven
+
+📦 **Use Case Example**:
+A user wants to travel from Bangalore to Hyderabad, selects AC bus, books 2 seats, and gets fare and seat confirmation.
+
+**Source code:**
 package busbooking.java;
 
 
